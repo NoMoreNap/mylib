@@ -2,15 +2,15 @@
 ## I make this for fun and test my skills
 ### How to use alert:
 1) add script:
-```
+```html
 <script src="node_modules\tonyabayonetta\lib\templates\custom_alert\custom_alert.js"></script>
 ```
 2) add style:
-```
+```html
 <link rel="stylesheet" href="node_modules\tonyabayonetta\lib\templates\custom_alert\custom_alert.css">
 ```
 3) add alert in ur body( or main):
-```
+```js
 const newAlert = new CustomAlert(document.querySelector('body'),'Your text')
 // to remove use .toRemove(Your time) method of new class
 // for example
@@ -18,15 +18,15 @@ newAlert.toRemove(5000) // alert be removed for 5 second
 ```
 ### How to use confirm:
 1) add script:
-```
+```html
 <script src="node_modules/tonyabayonetta/lib/templates/custom_confirm/custom_confirm.js"></script>
 ```
 2) add style:
-```
+```html
 <link rel="stylesheet" href="node_modules/tonyabayonetta/lib/templates/custom_confirm/custom_confirm.css">
 ```
 3) add confirm in html document:
-```
+```js
 const newConfirm = new CustomConfirm(document.querySelector('body'), {
     text: 'Your text',
     onTrue: () => {
@@ -40,11 +40,11 @@ const newConfirm = new CustomConfirm(document.querySelector('body'), {
 ```
 ### How to use my requests:
 1) add script:
-```
+```html
 <script src="node_modules/tonyabayonetta/lib/scripts/request.js"></script>
 ```
 #### XHR:
-```
+```js
 tonyAjax({
     url: 'Your Url',
     method: 'PUT/POST/GET/DELETE' // default GET,
@@ -71,7 +71,7 @@ tonyAjax({
 })
 ```
 #### Fetch
-```
+```js
 tonyFetch({
     url: 'Your Url',
     method: 'PUT/POST/GET/DELETE' // default GET,
@@ -97,11 +97,11 @@ tonyFetch({
 ```
 ### How to use template engine
 1) add script
-```
+```html
 <script src="node_modules/tonyabayonetta/lib/scripts/templateEngine.js"></script>
 ```
 2) call my function
-```
+```js
 const rawTemplate = {
     "tag": "div",
     "cls":  "mydiv",
@@ -121,16 +121,18 @@ const rawTemplate = {
 
 const sample = templateEngine(rawTemplate)
 document.querySelector('body').appendChild(sample)
-
-// we create next construction:
+```
+#### we create next construction:
+``` html
 <div class="myDiv" data-attr="true" href="vk.com/tonybayonetta">
     <h1>
         Hi!
     </h1>
 </div>
+```
 
-// any sample
-
+#### any sample
+```js
 document.querySelector('body').appendChild(templateEngine(sample()))
 
 function sample() {
