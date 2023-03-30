@@ -1,5 +1,5 @@
 # My personal lib
-## I make this for fun and test my skills
+## I make this for fun
 ### How to use alert:
 1) add script:
 ```html
