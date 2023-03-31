@@ -1,32 +1,36 @@
 # My personal lib
 ## I make this for fun and test my skills
-### How to use alert:
-1) add script:
+## Be sure to convert your file to type 'module'
+```html
+<script type="module" src="main.js"></script>
 ```
-<script src="node_modules\tonyabayonetta\lib\templates\custom_alert\custom_alert.js"></script>
+### How to use alert:
+1) import script:
+```js
+import CustomAlert from '/node_modules/tonyabayonetta/lib/templates/custom_alert/custom_alert.js'
 ```
 2) add style:
-```
+```html
 <link rel="stylesheet" href="node_modules\tonyabayonetta\lib\templates\custom_alert\custom_alert.css">
 ```
 3) add alert in ur body( or main):
-```
+```js
 const newAlert = new CustomAlert(document.querySelector('body'),'Your text')
 // to remove use .toRemove(Your time) method of new class
 // for example
 newAlert.toRemove(5000) // alert be removed for 5 second
 ```
 ### How to use confirm:
-1) add script:
-```
-<script src="node_modules/tonyabayonetta/lib/templates/custom_confirm/custom_confirm.js"></script>
+1) import script:
+```js
+import CustomConfirm from '/node_modules/tonyabayonetta/lib/templates/custom_confirm/custom_confirm.js'
 ```
 2) add style:
-```
+```html
 <link rel="stylesheet" href="node_modules/tonyabayonetta/lib/templates/custom_confirm/custom_confirm.css">
 ```
 3) add confirm in html document:
-```
+```js
 const newConfirm = new CustomConfirm(document.querySelector('body'), {
     text: 'Your text',
     onTrue: () => {
@@ -39,13 +43,13 @@ const newConfirm = new CustomConfirm(document.querySelector('body'), {
 // when user press on any one button, confirm be removed automatically
 ```
 ### How to use my requests:
-1) add script:
-```
-<script src="node_modules/tonyabayonetta/lib/scripts/request.js"></script>
+1) import script:
+```js
+import * as request from '/node_modules/tonyabayonetta/lib/scripts/request.js'
 ```
 #### XHR:
-```
-tonyAjax({
+```js
+request.tonyAjax({
     url: 'Your Url',
     method: 'PUT/POST/GET/DELETE' // default GET,
     body: {
@@ -71,8 +75,8 @@ tonyAjax({
 })
 ```
 #### Fetch
-```
-tonyFetch({
+```js
+request.tonyFetch({
     url: 'Your Url',
     method: 'PUT/POST/GET/DELETE' // default GET,
     body: {
@@ -97,11 +101,11 @@ tonyFetch({
 ```
 ### How to use template engine
 1) add script
+```js
+import templateEngine from '/node_modules/tonyabayonetta/lib/scripts/templateEngine.js'
 ```
-<script src="node_modules/tonyabayonetta/lib/scripts/templateEngine.js"></script>
-```
-2) call my function
-```
+2) then call the function
+```js
 const rawTemplate = {
     "tag": "div",
     "cls":  "mydiv",
@@ -121,16 +125,18 @@ const rawTemplate = {
 
 const sample = templateEngine(rawTemplate)
 document.querySelector('body').appendChild(sample)
-
-// we create next construction:
+```
+#### we create next construction:
+``` html
 <div class="myDiv" data-attr="true" href="vk.com/tonybayonetta">
     <h1>
         Hi!
     </h1>
 </div>
+```
 
-// any sample
-
+#### any sample
+```js
 document.querySelector('body').appendChild(templateEngine(sample()))
 
 function sample() {
