@@ -1,5 +1,5 @@
 # My personal lib
-## I make this for fun and test my skills
+## I make this for fun
 ## Be sure to convert your file to type 'module'
 ```html
 <script type="module" src="main.js"></script>
